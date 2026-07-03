@@ -1,0 +1,99 @@
+[
+  {
+    "test_name": "Python 列表排序 - standard 模式",
+    "prompt": "请解释这段 Python 代码：\n\nnumbers = [5, 2, 8, 1]\nsorted_numbers = sorted(numbers)\nprint(sorted_numbers)",
+    "expected_mode": "standard",
+    "success_criteria": [
+      "包含概览部分，用日常语言解释做什么",
+      "逐行解释每一行代码及其概念",
+      "展示至少 1 个替代方案的代码对比",
+      "提到性能或可靠性优势",
+      "包含常见错误部分，如搞混 sorted() 和 .sort()",
+      "避免使用复杂的专业术语",
+      "结尾问是否要调整深度"
+    ],
+    "must_appear": ["sorted()", "列表", "排序"]
+  },
+  {
+    "test_name": "极简代码 - quick 模式",
+    "prompt": "简短讲下这行：\n\nname = \"Alice\"",
+    "expected_mode": "quick",
+    "success_criteria": [
+      "不展开 5 步完整框架",
+      "不展示替代方案",
+      "1-2 句讲清楚",
+      "最多提 1 个常见错误",
+      "整体输出明显短于 standard 模式"
+    ],
+    "must_appear": ["变量", "Alice"]
+  },
+  {
+    "test_name": "极简代码无坑 - quick 边界",
+    "prompt": "简短讲下：\n\nimport os",
+    "expected_mode": "quick",
+    "success_criteria": [
+      "不展开 5 步框架",
+      "不展示替代方案",
+      "1-2 句讲清楚",
+      "不硬凑常见错误（如无有意义的坑则省略）",
+      "整体输出极短"
+    ],
+    "must_appear": ["import", "os"]
+  },
+  {
+    "test_name": "复杂代码 - deep 模式",
+    "prompt": "深入讲讲这段代码的设计：\n\nasync function fetchUsers() {\n  try {\n    const res = await fetch('/api/users');\n    if (!res.ok) throw new Error('HTTP ' + res.status);\n    return await res.json();\n  } catch (e) {\n    console.error(e);\n    return [];\n  }\n}\n\nfetchUsers().then(users => render(users));",
+    "expected_mode": "deep",
+    "success_criteria": [
+      "逐行解释按段分块（至少分 2-3 段）",
+      "段间有关联说明",
+      "解释 async/await 的机制（用比喻）",
+      "解释 try/catch 的作用",
+      "讨论设计权衡（为什么用 async、为什么 catch 后返回空数组）",
+      "给延伸阅读方向",
+      "提到 Promise.then 的角色",
+      "常见错误和实际应用整体给一次，不每段重复"
+    ],
+    "must_appear": ["async", "await", "Promise", "错误处理"]
+  },
+  {
+    "test_name": "JavaScript 函数 - standard 模式",
+    "prompt": "我看不懂这段 JavaScript 代码，能解释一下吗？\n\nfunction greet(name) {\n  return \"Hello, \" + name;\n}\n\nconst result = greet(\"Alice\");\nconsole.log(result);",
+    "expected_mode": "standard",
+    "success_criteria": [
+      "解释什么是函数（用生活比喻）",
+      "解释参数和返回值的概念",
+      "逐行讲解每行代码的作用",
+      "显示代码对比（如箭头函数）",
+      "包含常见错误（如忘记 return）"
+    ],
+    "must_appear": ["函数", "return", "参数"]
+  },
+  {
+    "test_name": "Python 字典操作 - standard 模式",
+    "prompt": "DeepSeek 给我写了这段代码，但我不懂。请从零开始给我讲解：\n\nstudent = {\"name\": \"Bob\", \"age\": 20, \"grade\": \"A\"}\nprint(student[\"name\"])\nstudent[\"age\"] = 21",
+    "expected_mode": "standard",
+    "success_criteria": [
+      "解释什么是字典（与列表的区别）",
+      "用生活例子（如通讯录）",
+      "解释键值对的概念",
+      "逐行讲解访问和修改字典内容",
+      "给出替代方案（如列表存储对比字典）",
+      "常见错误：访问不存在的键"
+    ],
+    "must_appear": ["字典", "键", "值"]
+  },
+  {
+    "test_name": "多语言混合 - standard 模式",
+    "prompt": "这个 HTML + JavaScript 的代码怎么运行的？\n\n<button onclick=\"sayHello()\">Click me</button>\n<script>\nfunction sayHello() {\n  alert(\"Hello!\");\n}\n</script>",
+    "expected_mode": "standard",
+    "success_criteria": [
+      "分别解释 HTML 和 JavaScript 的角色",
+      "解释它们如何协作",
+      "从零讲解事件处理的概念",
+      "包含替代实现方式",
+      "常见错误和最佳实践"
+    ],
+    "must_appear": ["HTML", "JavaScript", "事件"]
+  }
+]
